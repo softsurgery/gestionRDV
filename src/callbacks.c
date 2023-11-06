@@ -131,12 +131,12 @@ void on_refresh_clicked(GtkWidget *widget, gpointer user_data)
 
     if (gtk_tree_view_get_model(GTK_TREE_VIEW(tv)) == NULL)
     {
-        store = gtk_list_store_new(3, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING); // Create a list store with one column of type G_TYPE_STRING
+        store = gtk_list_store_new(3, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING);
         gtk_tree_view_set_model(GTK_TREE_VIEW(tv), GTK_TREE_MODEL(store));
         renderer = gtk_cell_renderer_text_new();
         column = gtk_tree_view_column_new_with_attributes("Nom", renderer, "text", 0, NULL);
         gtk_tree_view_append_column(GTK_TREE_VIEW(tv), column);
-        column = gtk_tree_view_column_new_with_attributes("Cin", renderer, "text", 1, NULL);
+        coléumn = gtk_tree_view_column_new_with_attributes("Cin", renderer, "text", 1, NULL);
         gtk_tree_view_append_column(GTK_TREE_VIEW(tv), column);
         column = gtk_tree_view_column_new_with_attributes("Date", renderer, "text", 2, NULL);
         gtk_tree_view_append_column(GTK_TREE_VIEW(tv), column);

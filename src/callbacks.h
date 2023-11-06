@@ -9,7 +9,6 @@ void on_modifier_tv_clicked(GtkWidget *widget, gpointer user_data);
 void on_supprimer_tv_clicked(GtkWidget *widget, gpointer user_data);
 
 void on_refresh_clicked(GtkWidget *widget, gpointer user_data);
-
 void on_chercher_clicked(GtkWidget *widget, gpointer user_data);
 
 void on_annuler1_clicked(GtkWidget *widget,gpointer user_data);

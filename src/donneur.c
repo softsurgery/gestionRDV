@@ -3,35 +3,22 @@
 #include <stdio.h>
 #include "donneur.h"
 
-// void allocate_string(char *buffer[], const char *value)
-// {
-//   *buffer = malloc(strlen(value) + 1);
-//   strcpy(*buffer, value);
-// }
-
-Donneur collect(char *nom, char *cin, int j, int m, int a)
-{
+Donneur collect(char *nom, char *cin, int j, int m, int a){  
   Donneur d;
-  Date date;
-  date.a = a;
-  date.m = m;
-  date.j = j;
   strcpy(d.nom, nom);
   strcpy(d.cin, cin);
-  d.date = date;
+  d.date.a = a;
+  d.date.a = m;
+  d.date.a = j;
   return d;
 }
 
-int export(Donneur d)
-{
+int export(Donneur d){
   FILE *fp = fopen("donneur.dat", "ab");
-  if (fp == NULL)
-  {
-    printf("Impossible d'ouvrir le fichier\n");
+  if (fp == NULL){
+    fprintf(stderr,"Impossible d'ouvrir le fichier\n");
     return 0;
-  }
-  else
-  {
+  } else{
     fwrite(&d, sizeof(Donneur), 1, fp);
     fclose(fp);
     return 1;
@@ -48,7 +35,6 @@ void populate(Donneur T[], int *n)
   else
   {
     *n = 0;
-
     while (1)
     {
       if (*n >= ARRAY_SIZE)
@@ -57,7 +43,7 @@ void populate(Donneur T[], int *n)
         break;
       }
 
-      size_t elementsRead = fread(&T[*n], sizeof(Donneur), 1, fp);
+      int elementsRead = fread(&T[*n], sizeof(Donneur), 1, fp);
       if (elementsRead != 1)
       {
         if (feof(fp))
