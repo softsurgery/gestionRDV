@@ -429,12 +429,12 @@ create_Donneur (void)
   GtkWidget *fixed4;
   GtkWidget *treeview;
   GtkWidget *ajouter;
-  GtkWidget *label15;
   GtkWidget *modifier;
   GtkWidget *supprimer;
   GtkWidget *label16;
   GtkWidget *label17;
   GtkWidget *refresh;
+  GtkWidget *label15;
 
   Donneur = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (Donneur), _("window1"));
@@ -452,12 +452,6 @@ create_Donneur (void)
   gtk_widget_show (ajouter);
   gtk_fixed_put (GTK_FIXED (fixed4), ajouter, 56, 336);
   gtk_widget_set_size_request (ajouter, 82, 32);
-
-  label15 = gtk_label_new (_("Gestion Rendez-Vous"));
-  gtk_widget_show (label15);
-  gtk_fixed_put (GTK_FIXED (fixed4), label15, 152, 32);
-  gtk_widget_set_size_request (label15, 168, 32);
-  gtk_label_set_justify (GTK_LABEL (label15), GTK_JUSTIFY_CENTER);
 
   modifier = gtk_button_new_with_mnemonic (_("modifier"));
   gtk_widget_show (modifier);
@@ -484,6 +478,12 @@ create_Donneur (void)
   gtk_fixed_put (GTK_FIXED (fixed4), refresh, 368, 32);
   gtk_widget_set_size_request (refresh, 88, 32);
 
+  label15 = gtk_label_new (_("Gestion Donneur"));
+  gtk_widget_show (label15);
+  gtk_fixed_put (GTK_FIXED (fixed4), label15, 152, 32);
+  gtk_widget_set_size_request (label15, 168, 32);
+  gtk_label_set_justify (GTK_LABEL (label15), GTK_JUSTIFY_CENTER);
+
   g_signal_connect ((gpointer) ajouter, "clicked",
                     G_CALLBACK (on_ajouter_tv_clicked),
                     NULL);
@@ -502,12 +502,12 @@ create_Donneur (void)
   GLADE_HOOKUP_OBJECT (Donneur, fixed4, "fixed4");
   GLADE_HOOKUP_OBJECT (Donneur, treeview, "treeview");
   GLADE_HOOKUP_OBJECT (Donneur, ajouter, "ajouter");
-  GLADE_HOOKUP_OBJECT (Donneur, label15, "label15");
   GLADE_HOOKUP_OBJECT (Donneur, modifier, "modifier");
   GLADE_HOOKUP_OBJECT (Donneur, supprimer, "supprimer");
   GLADE_HOOKUP_OBJECT (Donneur, label16, "label16");
   GLADE_HOOKUP_OBJECT (Donneur, label17, "label17");
   GLADE_HOOKUP_OBJECT (Donneur, refresh, "refresh");
+  GLADE_HOOKUP_OBJECT (Donneur, label15, "label15");
 
   return Donneur;
 }

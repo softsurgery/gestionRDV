@@ -99,7 +99,7 @@ void on_modifier_clicked(GtkWidget *widget, gpointer user_data)
     a = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(wa));
     delete_donneur(cin);
     export(collect(nom, cin, j, m, a));
-    gtk_label_set_text(GTK_LABEL(lookup_widget(widget,"msg")), "Modifiée !!!");
+    gtk_label_set_text(GTK_LABEL(lookup_widget(widget, "msg")), "Modifiée !!!");
 }
 
 void on_ajouter_tv_clicked(GtkWidget *widget, gpointer user_data)
@@ -136,7 +136,7 @@ void on_refresh_clicked(GtkWidget *widget, gpointer user_data)
         renderer = gtk_cell_renderer_text_new();
         column = gtk_tree_view_column_new_with_attributes("Nom", renderer, "text", 0, NULL);
         gtk_tree_view_append_column(GTK_TREE_VIEW(tv), column);
-        coléumn = gtk_tree_view_column_new_with_attributes("Cin", renderer, "text", 1, NULL);
+        column = gtk_tree_view_column_new_with_attributes("Cin", renderer, "text", 1, NULL);
         gtk_tree_view_append_column(GTK_TREE_VIEW(tv), column);
         column = gtk_tree_view_column_new_with_attributes("Date", renderer, "text", 2, NULL);
         gtk_tree_view_append_column(GTK_TREE_VIEW(tv), column);
@@ -156,12 +156,15 @@ void on_refresh_clicked(GtkWidget *widget, gpointer user_data)
     }
 }
 
-void on_annuler1_clicked(GtkWidget* widget,gpointer user_data){
+void on_annuler1_clicked(GtkWidget *widget, gpointer user_data)
+{
     gtk_widget_destroy(gtk_widget_get_parent(gtk_widget_get_parent(widget)));
 }
-void on_annuler2_clicked(GtkWidget* widget,gpointer user_data){
+void on_annuler2_clicked(GtkWidget *widget, gpointer user_data)
+{
     gtk_widget_destroy(gtk_widget_get_parent(gtk_widget_get_parent(widget)));
 }
-void on_annuler3_clicked(GtkWidget* widget,gpointer user_data){
+void on_annuler3_clicked(GtkWidget *widget, gpointer user_data)
+{
     gtk_widget_destroy(gtk_widget_get_parent(gtk_widget_get_parent(widget)));
 }
