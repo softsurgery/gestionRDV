@@ -104,19 +104,19 @@ void on_modifier_clicked(GtkWidget *widget, gpointer user_data)
 
 void on_ajouter_tv_clicked(GtkWidget *widget, gpointer user_data)
 {
-    GtkWidget *ajouter = create_ajouter_RDV_();
+    GtkWidget *ajouter = create_ajouter_donneur();
     gtk_widget_show(ajouter);
 }
 
 void on_modifier_tv_clicked(GtkWidget *widget, gpointer user_data)
 {
-    GtkWidget *modifier = create_modifier_RDV_();
+    GtkWidget *modifier = create_modifier_donneur_();
     gtk_widget_show(modifier);
 }
 
 void on_supprimer_tv_clicked(GtkWidget *widget, gpointer user_data)
 {
-    GtkWidget *supprimer = create_supprimer_RDV();
+    GtkWidget *supprimer = create_supprimer_donneur();
     gtk_widget_show(supprimer);
 }
 

@@ -3,9 +3,9 @@
 
 <glade-interface>
 
-<widget class="GtkWindow" id="ajouter RDV ">
+<widget class="GtkWindow" id="ajouter_donneur">
   <property name="visible">True</property>
-  <property name="title" translatable="yes">ajout RDV </property>
+  <property name="title" translatable="yes">Ajouter Donneur</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
   <property name="modal">False</property>
@@ -397,9 +397,9 @@
   </child>
 </widget>
 
-<widget class="GtkWindow" id="modifier RDV ">
+<widget class="GtkWindow" id="modifier_donneur ">
   <property name="visible">True</property>
-  <property name="title" translatable="yes">modfier RDV </property>
+  <property name="title" translatable="yes">Modifier Donneur</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_CENTER</property>
   <property name="modal">False</property>
@@ -860,9 +860,9 @@
   </child>
 </widget>
 
-<widget class="GtkWindow" id="supprimer RDV">
+<widget class="GtkWindow" id="supprimer_donneur">
   <property name="visible">True</property>
-  <property name="title" translatable="yes">supprimer RDV</property>
+  <property name="title" translatable="yes">Supprimer Donneur</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
   <property name="modal">False</property>
