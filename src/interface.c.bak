@@ -27,9 +27,9 @@
   g_object_set_data (G_OBJECT (component), name, widget)
 
 GtkWidget*
-create_ajouter_RDV_ (void)
+create_ajouter_donneur (void)
 {
-  GtkWidget *ajouter_RDV_;
+  GtkWidget *ajouter_donneur;
   GtkWidget *fixed1;
   GtkWidget *nom;
   GtkObject *j_adj;
@@ -51,12 +51,12 @@ create_ajouter_RDV_ (void)
   GtkWidget *label27;
   GtkWidget *msg;
 
-  ajouter_RDV_ = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-  gtk_window_set_title (GTK_WINDOW (ajouter_RDV_), _("ajout RDV "));
+  ajouter_donneur = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  gtk_window_set_title (GTK_WINDOW (ajouter_donneur), _("Ajouter Donneur"));
 
   fixed1 = gtk_fixed_new ();
   gtk_widget_show (fixed1);
-  gtk_container_add (GTK_CONTAINER (ajouter_RDV_), fixed1);
+  gtk_container_add (GTK_CONTAINER (ajouter_donneur), fixed1);
 
   nom = gtk_entry_new ();
   gtk_widget_show (nom);
@@ -151,32 +151,32 @@ create_ajouter_RDV_ (void)
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
-  GLADE_HOOKUP_OBJECT_NO_REF (ajouter_RDV_, ajouter_RDV_, "ajouter_RDV_");
-  GLADE_HOOKUP_OBJECT (ajouter_RDV_, fixed1, "fixed1");
-  GLADE_HOOKUP_OBJECT (ajouter_RDV_, nom, "nom");
-  GLADE_HOOKUP_OBJECT (ajouter_RDV_, j, "j");
-  GLADE_HOOKUP_OBJECT (ajouter_RDV_, m, "m");
-  GLADE_HOOKUP_OBJECT (ajouter_RDV_, a, "a");
-  GLADE_HOOKUP_OBJECT (ajouter_RDV_, cin, "cin");
-  GLADE_HOOKUP_OBJECT (ajouter_RDV_, label3, "label3");
-  GLADE_HOOKUP_OBJECT (ajouter_RDV_, label4, "label4");
-  GLADE_HOOKUP_OBJECT (ajouter_RDV_, label5, "label5");
-  GLADE_HOOKUP_OBJECT (ajouter_RDV_, label6, "label6");
-  GLADE_HOOKUP_OBJECT (ajouter_RDV_, label26, "label26");
-  GLADE_HOOKUP_OBJECT (ajouter_RDV_, ajouter, "ajouter");
-  GLADE_HOOKUP_OBJECT (ajouter_RDV_, label2, "label2");
-  GLADE_HOOKUP_OBJECT (ajouter_RDV_, label1, "label1");
-  GLADE_HOOKUP_OBJECT (ajouter_RDV_, annuler, "annuler");
-  GLADE_HOOKUP_OBJECT (ajouter_RDV_, label27, "label27");
-  GLADE_HOOKUP_OBJECT (ajouter_RDV_, msg, "msg");
+  GLADE_HOOKUP_OBJECT_NO_REF (ajouter_donneur, ajouter_donneur, "ajouter_donneur");
+  GLADE_HOOKUP_OBJECT (ajouter_donneur, fixed1, "fixed1");
+  GLADE_HOOKUP_OBJECT (ajouter_donneur, nom, "nom");
+  GLADE_HOOKUP_OBJECT (ajouter_donneur, j, "j");
+  GLADE_HOOKUP_OBJECT (ajouter_donneur, m, "m");
+  GLADE_HOOKUP_OBJECT (ajouter_donneur, a, "a");
+  GLADE_HOOKUP_OBJECT (ajouter_donneur, cin, "cin");
+  GLADE_HOOKUP_OBJECT (ajouter_donneur, label3, "label3");
+  GLADE_HOOKUP_OBJECT (ajouter_donneur, label4, "label4");
+  GLADE_HOOKUP_OBJECT (ajouter_donneur, label5, "label5");
+  GLADE_HOOKUP_OBJECT (ajouter_donneur, label6, "label6");
+  GLADE_HOOKUP_OBJECT (ajouter_donneur, label26, "label26");
+  GLADE_HOOKUP_OBJECT (ajouter_donneur, ajouter, "ajouter");
+  GLADE_HOOKUP_OBJECT (ajouter_donneur, label2, "label2");
+  GLADE_HOOKUP_OBJECT (ajouter_donneur, label1, "label1");
+  GLADE_HOOKUP_OBJECT (ajouter_donneur, annuler, "annuler");
+  GLADE_HOOKUP_OBJECT (ajouter_donneur, label27, "label27");
+  GLADE_HOOKUP_OBJECT (ajouter_donneur, msg, "msg");
 
-  return ajouter_RDV_;
+  return ajouter_donneur;
 }
 
 GtkWidget*
-create_modifier_RDV_ (void)
+create_modifier_donneur_ (void)
 {
-  GtkWidget *modifier_RDV_;
+  GtkWidget *modifier_donneur_;
   GtkWidget *fixed2;
   GtkWidget *nom;
   GtkWidget *cin;
@@ -201,13 +201,13 @@ create_modifier_RDV_ (void)
   GtkWidget *annuler;
   GtkWidget *msg;
 
-  modifier_RDV_ = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-  gtk_window_set_title (GTK_WINDOW (modifier_RDV_), _("modfier RDV "));
-  gtk_window_set_position (GTK_WINDOW (modifier_RDV_), GTK_WIN_POS_CENTER);
+  modifier_donneur_ = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  gtk_window_set_title (GTK_WINDOW (modifier_donneur_), _("Modifier Donneur"));
+  gtk_window_set_position (GTK_WINDOW (modifier_donneur_), GTK_WIN_POS_CENTER);
 
   fixed2 = gtk_fixed_new ();
   gtk_widget_show (fixed2);
-  gtk_container_add (GTK_CONTAINER (modifier_RDV_), fixed2);
+  gtk_container_add (GTK_CONTAINER (modifier_donneur_), fixed2);
 
   nom = gtk_entry_new ();
   gtk_widget_show (nom);
@@ -320,35 +320,35 @@ create_modifier_RDV_ (void)
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
-  GLADE_HOOKUP_OBJECT_NO_REF (modifier_RDV_, modifier_RDV_, "modifier_RDV_");
-  GLADE_HOOKUP_OBJECT (modifier_RDV_, fixed2, "fixed2");
-  GLADE_HOOKUP_OBJECT (modifier_RDV_, nom, "nom");
-  GLADE_HOOKUP_OBJECT (modifier_RDV_, cin, "cin");
-  GLADE_HOOKUP_OBJECT (modifier_RDV_, j, "j");
-  GLADE_HOOKUP_OBJECT (modifier_RDV_, m, "m");
-  GLADE_HOOKUP_OBJECT (modifier_RDV_, a, "a");
-  GLADE_HOOKUP_OBJECT (modifier_RDV_, label21, "label21");
-  GLADE_HOOKUP_OBJECT (modifier_RDV_, label8, "label8");
-  GLADE_HOOKUP_OBJECT (modifier_RDV_, label7, "label7");
-  GLADE_HOOKUP_OBJECT (modifier_RDV_, label10, "label10");
-  GLADE_HOOKUP_OBJECT (modifier_RDV_, label12, "label12");
-  GLADE_HOOKUP_OBJECT (modifier_RDV_, label11, "label11");
-  GLADE_HOOKUP_OBJECT (modifier_RDV_, label9, "label9");
-  GLADE_HOOKUP_OBJECT (modifier_RDV_, chercher, "chercher");
-  GLADE_HOOKUP_OBJECT (modifier_RDV_, modifier, "modifier");
-  GLADE_HOOKUP_OBJECT (modifier_RDV_, label22, "label22");
-  GLADE_HOOKUP_OBJECT (modifier_RDV_, label23, "label23");
-  GLADE_HOOKUP_OBJECT (modifier_RDV_, label24, "label24");
-  GLADE_HOOKUP_OBJECT (modifier_RDV_, annuler, "annuler");
-  GLADE_HOOKUP_OBJECT (modifier_RDV_, msg, "msg");
+  GLADE_HOOKUP_OBJECT_NO_REF (modifier_donneur_, modifier_donneur_, "modifier_donneur_");
+  GLADE_HOOKUP_OBJECT (modifier_donneur_, fixed2, "fixed2");
+  GLADE_HOOKUP_OBJECT (modifier_donneur_, nom, "nom");
+  GLADE_HOOKUP_OBJECT (modifier_donneur_, cin, "cin");
+  GLADE_HOOKUP_OBJECT (modifier_donneur_, j, "j");
+  GLADE_HOOKUP_OBJECT (modifier_donneur_, m, "m");
+  GLADE_HOOKUP_OBJECT (modifier_donneur_, a, "a");
+  GLADE_HOOKUP_OBJECT (modifier_donneur_, label21, "label21");
+  GLADE_HOOKUP_OBJECT (modifier_donneur_, label8, "label8");
+  GLADE_HOOKUP_OBJECT (modifier_donneur_, label7, "label7");
+  GLADE_HOOKUP_OBJECT (modifier_donneur_, label10, "label10");
+  GLADE_HOOKUP_OBJECT (modifier_donneur_, label12, "label12");
+  GLADE_HOOKUP_OBJECT (modifier_donneur_, label11, "label11");
+  GLADE_HOOKUP_OBJECT (modifier_donneur_, label9, "label9");
+  GLADE_HOOKUP_OBJECT (modifier_donneur_, chercher, "chercher");
+  GLADE_HOOKUP_OBJECT (modifier_donneur_, modifier, "modifier");
+  GLADE_HOOKUP_OBJECT (modifier_donneur_, label22, "label22");
+  GLADE_HOOKUP_OBJECT (modifier_donneur_, label23, "label23");
+  GLADE_HOOKUP_OBJECT (modifier_donneur_, label24, "label24");
+  GLADE_HOOKUP_OBJECT (modifier_donneur_, annuler, "annuler");
+  GLADE_HOOKUP_OBJECT (modifier_donneur_, msg, "msg");
 
-  return modifier_RDV_;
+  return modifier_donneur_;
 }
 
 GtkWidget*
-create_supprimer_RDV (void)
+create_supprimer_donneur (void)
 {
-  GtkWidget *supprimer_RDV;
+  GtkWidget *supprimer_donneur;
   GtkWidget *fixed3;
   GtkWidget *cin;
   GtkWidget *delete;
@@ -358,12 +358,12 @@ create_supprimer_RDV (void)
   GtkWidget *msg;
   GtkWidget *label14;
 
-  supprimer_RDV = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-  gtk_window_set_title (GTK_WINDOW (supprimer_RDV), _("supprimer RDV"));
+  supprimer_donneur = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  gtk_window_set_title (GTK_WINDOW (supprimer_donneur), _("Supprimer Donneur"));
 
   fixed3 = gtk_fixed_new ();
   gtk_widget_show (fixed3);
-  gtk_container_add (GTK_CONTAINER (supprimer_RDV), fixed3);
+  gtk_container_add (GTK_CONTAINER (supprimer_donneur), fixed3);
 
   cin = gtk_entry_new ();
   gtk_widget_show (cin);
@@ -409,17 +409,17 @@ create_supprimer_RDV (void)
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
-  GLADE_HOOKUP_OBJECT_NO_REF (supprimer_RDV, supprimer_RDV, "supprimer_RDV");
-  GLADE_HOOKUP_OBJECT (supprimer_RDV, fixed3, "fixed3");
-  GLADE_HOOKUP_OBJECT (supprimer_RDV, cin, "cin");
-  GLADE_HOOKUP_OBJECT (supprimer_RDV, delete, "delete");
-  GLADE_HOOKUP_OBJECT (supprimer_RDV, label19, "label19");
-  GLADE_HOOKUP_OBJECT (supprimer_RDV, label20, "label20");
-  GLADE_HOOKUP_OBJECT (supprimer_RDV, annuler, "annuler");
-  GLADE_HOOKUP_OBJECT (supprimer_RDV, msg, "msg");
-  GLADE_HOOKUP_OBJECT (supprimer_RDV, label14, "label14");
+  GLADE_HOOKUP_OBJECT_NO_REF (supprimer_donneur, supprimer_donneur, "supprimer_donneur");
+  GLADE_HOOKUP_OBJECT (supprimer_donneur, fixed3, "fixed3");
+  GLADE_HOOKUP_OBJECT (supprimer_donneur, cin, "cin");
+  GLADE_HOOKUP_OBJECT (supprimer_donneur, delete, "delete");
+  GLADE_HOOKUP_OBJECT (supprimer_donneur, label19, "label19");
+  GLADE_HOOKUP_OBJECT (supprimer_donneur, label20, "label20");
+  GLADE_HOOKUP_OBJECT (supprimer_donneur, annuler, "annuler");
+  GLADE_HOOKUP_OBJECT (supprimer_donneur, msg, "msg");
+  GLADE_HOOKUP_OBJECT (supprimer_donneur, label14, "label14");
 
-  return supprimer_RDV;
+  return supprimer_donneur;
 }
 
 GtkWidget*

@@ -437,7 +437,7 @@ create_Donneur (void)
   GtkWidget *label15;
 
   Donneur = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-  gtk_window_set_title (GTK_WINDOW (Donneur), _("window1"));
+  gtk_window_set_title (GTK_WINDOW (Donneur), _("Donneurs"));
 
   fixed4 = gtk_fixed_new ();
   gtk_widget_show (fixed4);
