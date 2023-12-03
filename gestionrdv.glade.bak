@@ -359,62 +359,6 @@
       </child>
 
       <child>
-	<widget class="GtkRadioButton" id="radiobutton2">
-	  <property name="width_request">116</property>
-	  <property name="height_request">24</property>
-	  <property name="visible">True</property>
-	  <property name="can_focus">True</property>
-	  <property name="label" translatable="yes">Femme</property>
-	  <property name="use_underline">True</property>
-	  <property name="relief">GTK_RELIEF_NORMAL</property>
-	  <property name="focus_on_click">True</property>
-	  <property name="active">False</property>
-	  <property name="inconsistent">False</property>
-	  <property name="draw_indicator">True</property>
-	</widget>
-	<packing>
-	  <property name="x">288</property>
-	  <property name="y">208</property>
-	</packing>
-      </child>
-
-      <child>
-	<widget class="GtkRadioButton" id="radiobutton1">
-	  <property name="width_request">116</property>
-	  <property name="height_request">24</property>
-	  <property name="visible">True</property>
-	  <property name="can_focus">True</property>
-	  <property name="label" translatable="yes">Homme</property>
-	  <property name="use_underline">True</property>
-	  <property name="relief">GTK_RELIEF_NORMAL</property>
-	  <property name="focus_on_click">True</property>
-	  <property name="active">False</property>
-	  <property name="inconsistent">False</property>
-	  <property name="draw_indicator">True</property>
-	  <property name="group">radiobutton2</property>
-	</widget>
-	<packing>
-	  <property name="x">136</property>
-	  <property name="y">208</property>
-	</packing>
-      </child>
-
-      <child>
-	<widget class="GtkComboBoxEntry" id="comboboxentry1">
-	  <property name="width_request">189</property>
-	  <property name="height_request">29</property>
-	  <property name="visible">True</property>
-	  <property name="add_tearoffs">False</property>
-	  <property name="has_frame">True</property>
-	  <property name="focus_on_click">True</property>
-	</widget>
-	<packing>
-	  <property name="x">168</property>
-	  <property name="y">136</property>
-	</packing>
-      </child>
-
-      <child>
 	<widget class="GtkButton" id="annuler">
 	  <property name="width_request">80</property>
 	  <property name="height_request">40</property>
@@ -623,6 +567,62 @@
 	<packing>
 	  <property name="x">160</property>
 	  <property name="y">400</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkComboBoxEntry" id="ets">
+	  <property name="width_request">189</property>
+	  <property name="height_request">29</property>
+	  <property name="visible">True</property>
+	  <property name="add_tearoffs">False</property>
+	  <property name="has_frame">True</property>
+	  <property name="focus_on_click">True</property>
+	</widget>
+	<packing>
+	  <property name="x">168</property>
+	  <property name="y">136</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkRadioButton" id="sexe1">
+	  <property name="width_request">116</property>
+	  <property name="height_request">24</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">Homme</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <property name="active">False</property>
+	  <property name="inconsistent">False</property>
+	  <property name="draw_indicator">True</property>
+	</widget>
+	<packing>
+	  <property name="x">136</property>
+	  <property name="y">208</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkRadioButton" id="sexe2">
+	  <property name="width_request">116</property>
+	  <property name="height_request">24</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">Femme</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <property name="active">False</property>
+	  <property name="inconsistent">False</property>
+	  <property name="draw_indicator">True</property>
+	  <property name="group">sexe1</property>
+	</widget>
+	<packing>
+	  <property name="x">288</property>
+	  <property name="y">208</property>
 	</packing>
       </child>
     </widget>

@@ -48,10 +48,6 @@ create_ajouter_donneur (void)
   GtkWidget *label2;
   GtkWidget *ets;
   GtkWidget *label31;
-  GtkWidget *radiobutton2;
-  GSList *radiobutton2_group = NULL;
-  GtkWidget *radiobutton1;
-  GtkWidget *comboboxentry1;
   GtkWidget *annuler;
   GtkWidget *alignment1;
   GtkWidget *hbox1;
@@ -64,6 +60,10 @@ create_ajouter_donneur (void)
   GtkWidget *label30;
   GtkWidget *label3;
   GtkWidget *msg;
+  GtkWidget *ets;
+  GtkWidget *sexe1;
+  GSList *sexe1_group = NULL;
+  GtkWidget *sexe2;
 
   ajouter_donneur = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (ajouter_donneur), _("Ajouter Donneur"));
@@ -147,25 +147,6 @@ create_ajouter_donneur (void)
   gtk_fixed_put (GTK_FIXED (fixed1), label31, 64, 208);
   gtk_widget_set_size_request (label31, 49, 17);
 
-  radiobutton2 = gtk_radio_button_new_with_mnemonic (NULL, _("Femme"));
-  gtk_widget_show (radiobutton2);
-  gtk_fixed_put (GTK_FIXED (fixed1), radiobutton2, 288, 208);
-  gtk_widget_set_size_request (radiobutton2, 116, 24);
-  gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobutton2), radiobutton2_group);
-  radiobutton2_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobutton2));
-
-  radiobutton1 = gtk_radio_button_new_with_mnemonic (NULL, _("Homme"));
-  gtk_widget_show (radiobutton1);
-  gtk_fixed_put (GTK_FIXED (fixed1), radiobutton1, 136, 208);
-  gtk_widget_set_size_request (radiobutton1, 116, 24);
-  gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobutton1), radiobutton2_group);
-  radiobutton2_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobutton1));
-
-  comboboxentry1 = gtk_combo_box_entry_new_text ();
-  gtk_widget_show (comboboxentry1);
-  gtk_fixed_put (GTK_FIXED (fixed1), comboboxentry1, 168, 136);
-  gtk_widget_set_size_request (comboboxentry1, 189, 29);
-
   annuler = gtk_button_new ();
   gtk_widget_show (annuler);
   gtk_fixed_put (GTK_FIXED (fixed1), annuler, 280, 344);
@@ -218,6 +199,25 @@ create_ajouter_donneur (void)
   gtk_fixed_put (GTK_FIXED (fixed1), msg, 160, 400);
   gtk_widget_set_size_request (msg, 144, 24);
 
+  ets = gtk_combo_box_entry_new_text ();
+  gtk_widget_show (ets);
+  gtk_fixed_put (GTK_FIXED (fixed1), ets, 168, 136);
+  gtk_widget_set_size_request (ets, 189, 29);
+
+  sexe1 = gtk_radio_button_new_with_mnemonic (NULL, _("Homme"));
+  gtk_widget_show (sexe1);
+  gtk_fixed_put (GTK_FIXED (fixed1), sexe1, 136, 208);
+  gtk_widget_set_size_request (sexe1, 116, 24);
+  gtk_radio_button_set_group (GTK_RADIO_BUTTON (sexe1), sexe1_group);
+  sexe1_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (sexe1));
+
+  sexe2 = gtk_radio_button_new_with_mnemonic (NULL, _("Femme"));
+  gtk_widget_show (sexe2);
+  gtk_fixed_put (GTK_FIXED (fixed1), sexe2, 288, 208);
+  gtk_widget_set_size_request (sexe2, 116, 24);
+  gtk_radio_button_set_group (GTK_RADIO_BUTTON (sexe2), sexe1_group);
+  sexe1_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (sexe2));
+
   g_signal_connect ((gpointer) annuler, "clicked",
                     G_CALLBACK (on_annuler1_clicked),
                     NULL);
@@ -242,9 +242,6 @@ create_ajouter_donneur (void)
   GLADE_HOOKUP_OBJECT (ajouter_donneur, label2, "label2");
   GLADE_HOOKUP_OBJECT (ajouter_donneur, ets, "ets");
   GLADE_HOOKUP_OBJECT (ajouter_donneur, label31, "label31");
-  GLADE_HOOKUP_OBJECT (ajouter_donneur, radiobutton2, "radiobutton2");
-  GLADE_HOOKUP_OBJECT (ajouter_donneur, radiobutton1, "radiobutton1");
-  GLADE_HOOKUP_OBJECT (ajouter_donneur, comboboxentry1, "comboboxentry1");
   GLADE_HOOKUP_OBJECT (ajouter_donneur, annuler, "annuler");
   GLADE_HOOKUP_OBJECT (ajouter_donneur, alignment1, "alignment1");
   GLADE_HOOKUP_OBJECT (ajouter_donneur, hbox1, "hbox1");
@@ -257,6 +254,9 @@ create_ajouter_donneur (void)
   GLADE_HOOKUP_OBJECT (ajouter_donneur, label30, "label30");
   GLADE_HOOKUP_OBJECT (ajouter_donneur, label3, "label3");
   GLADE_HOOKUP_OBJECT (ajouter_donneur, msg, "msg");
+  GLADE_HOOKUP_OBJECT (ajouter_donneur, ets, "ets");
+  GLADE_HOOKUP_OBJECT (ajouter_donneur, sexe1, "sexe1");
+  GLADE_HOOKUP_OBJECT (ajouter_donneur, sexe2, "sexe2");
 
   return ajouter_donneur;
 }
