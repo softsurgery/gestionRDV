@@ -46,7 +46,6 @@ create_ajouter_donneur (void)
   GtkWidget *label4;
   GtkWidget *label1;
   GtkWidget *label2;
-  GtkWidget *ets;
   GtkWidget *label31;
   GtkWidget *annuler;
   GtkWidget *alignment1;
