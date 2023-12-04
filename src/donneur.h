@@ -47,4 +47,6 @@ char* date_to_string(Date d);
 int delete_donneur(char* cin);
 int searchDonneurByCIN(const char *cin, Donneur *foundDonneur);
 int loadETS(char* ETS[],int* n);
-int nbETS(char nomFichier[])
+int nbETS(char nomFichier[]);
+int listRDV(char nomFichier[],char ETS[],int jour,int mois,int annee);
+float moyRDV_ETS(char nomFichier[],int jour,int mois,int annee);

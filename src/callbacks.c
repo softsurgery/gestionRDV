@@ -13,17 +13,17 @@
 
 void on_ajouter_clicked(GtkWidget *widget, gpointer user_data)
 {
-    GtkWidget *wnom, *wcin, *wj, *wm, *wa,*wcombo,*sexe1,*sexe2;
+    GtkWidget *wnom, *wcin, *wj, *wm, *wa, *wcombo, *sexe1, *sexe2;
     wnom = lookup_widget(widget, "nom");
     wcin = lookup_widget(widget, "cin");
     wj = lookup_widget(widget, "j");
     wm = lookup_widget(widget, "m");
     wa = lookup_widget(widget, "a");
-    wcombo = lookup_widget(widget,"ets");
-    sexe1 = lookup_widget(widget,"sexe1");
-    sexe2 = lookup_widget(widget,"sexe2");
+    wcombo = lookup_widget(widget, "ets");
+    sexe1 = lookup_widget(widget, "sexe1");
+    sexe2 = lookup_widget(widget, "sexe2");
 
-    char nom[NAME_SIZE], cin[CIN_SIZE],ets[ETS_SIZE];
+    char nom[NAME_SIZE], cin[CIN_SIZE], ets[ETS_SIZE];
     int j, m, a;
     char sexe;
 
@@ -32,11 +32,13 @@ void on_ajouter_clicked(GtkWidget *widget, gpointer user_data)
     j = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(wj));
     m = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(wm));
     a = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(wa));
-    strcpy(ets,gtk_combo_box_get_active_text(GTK_COMBO_BOX(wcombo)));
-    if (gtk_toggle_button_get_active(GTK_ACTION(sexe1))) sexe = 'H';
-    else if (gtk_toggle_button_get_active(GTK_ACTION(sexe2))) sexe = 'F';
+    strcpy(ets, gtk_combo_box_get_active_text(GTK_COMBO_BOX(wcombo)));
+    if (gtk_toggle_button_get_active(GTK_ACTION(sexe1)))
+        sexe = 'H';
+    else if (gtk_toggle_button_get_active(GTK_ACTION(sexe2)))
+        sexe = 'F';
 
-    export(collect(nom,cin,j,m,a,sexe,ets));
+    export(collect(nom, cin, j, m, a, sexe, ets));
     gtk_label_set_text(GTK_LABEL(lookup_widget(widget, "msg")), "Ajouteé !!!");
 }
 
@@ -89,17 +91,18 @@ void on_chercher_clicked(GtkWidget *widget, gpointer user_data)
 
 void on_modifier_clicked(GtkWidget *widget, gpointer user_data)
 {
-    GtkWidget *wnom, *wcin, *wj, *wm, *wa,*wcombo,*sexe1,*sexe2;;
+    GtkWidget *wnom, *wcin, *wj, *wm, *wa, *wcombo, *sexe1, *sexe2;
+    ;
     wnom = lookup_widget(widget, "nom");
     wcin = lookup_widget(widget, "cin");
     wj = lookup_widget(widget, "j");
     wm = lookup_widget(widget, "m");
     wa = lookup_widget(widget, "a");
-    wcombo = lookup_widget(widget,"ets");
-    sexe1 = lookup_widget(widget,"sexe1");
-    sexe2 = lookup_widget(widget,"sexe2");
+    wcombo = lookup_widget(widget, "ets");
+    sexe1 = lookup_widget(widget, "sexe1");
+    sexe2 = lookup_widget(widget, "sexe2");
 
-    char nom[NAME_SIZE], cin[CIN_SIZE],ets[ETS_SIZE];
+    char nom[NAME_SIZE], cin[CIN_SIZE], ets[ETS_SIZE];
     int j, m, a;
     char sexe;
 
@@ -108,11 +111,13 @@ void on_modifier_clicked(GtkWidget *widget, gpointer user_data)
     j = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(wj));
     m = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(wm));
     a = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(wa));
-    strcpy(ets,gtk_combo_box_get_active_text(GTK_COMBO_BOX(wcombo)));
-    if (gtk_toggle_button_get_active(GTK_ACTION(sexe1))) sexe = 'H';
-    else if (gtk_toggle_button_get_active(GTK_ACTION(sexe2))) sexe = 'F';
+    strcpy(ets, gtk_combo_box_get_active_text(GTK_COMBO_BOX(wcombo)));
+    if (gtk_toggle_button_get_active(GTK_ACTION(sexe1)))
+        sexe = 'H';
+    else if (gtk_toggle_button_get_active(GTK_ACTION(sexe2)))
+        sexe = 'F';
     delete_donneur(cin);
-    export(collect(nom,cin,j,m,a,sexe,ets));
+    export(collect(nom, cin, j, m, a, sexe, ets));
     gtk_label_set_text(GTK_LABEL(lookup_widget(widget, "msg")), "Modifiée !!!");
 }
 
@@ -128,7 +133,8 @@ void on_ajouter_tv_clicked(GtkWidget *widget, gpointer user_data)
     combo = lookup_widget(ajouter, "ets");
     GtkListStore *store = gtk_list_store_new(1, G_TYPE_STRING);
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         GtkTreeIter iter;
         gtk_list_store_append(store, &iter);
         gtk_list_store_set(store, &iter, 0, ETS[i], -1);
@@ -137,7 +143,6 @@ void on_ajouter_tv_clicked(GtkWidget *widget, gpointer user_data)
     GtkCellRenderer *renderer = gtk_cell_renderer_text_new();
     gtk_cell_layout_pack_start(GTK_CELL_LAYOUT(combo), renderer, TRUE);
     g_object_unref(store);
-
 }
 
 void on_modifier_tv_clicked(GtkWidget *widget, gpointer user_data)
@@ -163,7 +168,7 @@ void on_refresh_clicked(GtkWidget *widget, gpointer user_data)
 
     if (gtk_tree_view_get_model(GTK_TREE_VIEW(tv)) == NULL)
     {
-        store = gtk_list_store_new(5, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING);
+        store = gtk_list_store_new(5, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING);
         gtk_tree_view_set_model(GTK_TREE_VIEW(tv), GTK_TREE_MODEL(store));
         renderer = gtk_cell_renderer_text_new();
         column = gtk_tree_view_column_new_with_attributes("Nom", renderer, "text", 0, NULL);
@@ -188,14 +193,14 @@ void on_refresh_clicked(GtkWidget *widget, gpointer user_data)
     for (int i = 0; i < n; i++)
     {
         gtk_list_store_append(store, &iter);
-        gtk_list_store_set(store, 
-        &iter, 
-        0, donneurs[i].nom, 
-        1, donneurs[i].cin, 
-        2, date_to_string(donneurs[i].date),
-        3, donneurs[i].sexe=='H' ? "Homme" : "Femme",
-        4, donneurs[i].ets,
-        -1);
+        gtk_list_store_set(store,
+                           &iter,
+                           0, donneurs[i].nom,
+                           1, donneurs[i].cin,
+                           2, date_to_string(donneurs[i].date),
+                           3, donneurs[i].sexe == 'H' ? "Homme" : "Femme",
+                           4, donneurs[i].ets,
+                           -1);
     }
 }
 
@@ -211,26 +216,61 @@ void on_annuler3_clicked(GtkWidget *widget, gpointer user_data)
 {
     gtk_widget_destroy(gtk_widget_get_parent(gtk_widget_get_parent(widget)));
 }
-void
-on_affichier_clicked                   (GtkButton       *button,
-                                        gpointer         user_data)
-{
+void on_affichier_clicked(GtkWidget *widget, gpointer user_data){
+    GtkWidget *wj, *wm, *wa, *wcombo,*nbrdv,*nbets,*moy;
+    int j,m,a;
+    char ETS[ETS_SIZE];
+    wj = lookup_widget(widget, "j");
+    wm = lookup_widget(widget, "m");
+    wa = lookup_widget(widget, "a");
+    nbrdv = lookup_widget(widget,"nbrdv");
+    nbets = lookup_widget(widget,"nbets");
+    moy = lookup_widget(widget,"moy");
+    wcombo = lookup_widget(widget, "ETS");
+    j = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(wj));
+    m = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(wm));
+    a = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(wa));
+    Date d;
+    d.j = j;
+    d.m = m;
+    d.a = a;
+    strcpy(ETS, gtk_combo_box_get_active_text(GTK_COMBO_BOX(wcombo)));
+    char buffer[20]; 
+    snprintf(buffer, sizeof(buffer), "Nombre de ETS : %d", nbETS("ets.txt"));
+    gtk_label_set_text(GTK_LABEL(nbrdv),buffer);
+
+    snprintf(buffer, sizeof(buffer), "Nombre de RDV : %d", listRDV("ets.txt",ETS,j,m,a));  
+    gtk_label_set_text(GTK_LABEL(nbets),buffer);
+
+    snprintf(buffer, sizeof(buffer), "Moyenne : %.2f", moyRDV_ETS("ets.txt",j,m,a));  
+    gtk_label_set_text(GTK_LABEL(moy),buffer);
 
 }
 
-
-void
-on_annuler4_clicked                    (GtkButton       *button,
-                                        gpointer         user_data)
-{
-
+void on_annuler4_clicked(GtkWidget *widget, gpointer user_data){
+     gtk_widget_destroy(gtk_widget_get_parent(gtk_widget_get_parent(widget)));
 }
 
-
-void
-on_stat_clicked                        (GtkButton       *button,
-                                        gpointer         user_data)
+void on_stat_clicked(GtkWidget *widget, gpointer user_data)
 {
+    char *ETS[ARRAY_SIZE];
+    int n = 0;
+    loadETS(ETS, &n);
+    GtkWidget *stat = create_stat();
+    gtk_widget_show(stat);
 
+    GtkWidget *combo;
+    combo = lookup_widget(stat, "ETS");
+    GtkListStore *store = gtk_list_store_new(1, G_TYPE_STRING);
+
+    for (int i = 0; i < n; i++)
+    {
+        GtkTreeIter iter;
+        gtk_list_store_append(store, &iter);
+        gtk_list_store_set(store, &iter, 0, ETS[i], -1);
+    }
+    gtk_combo_box_set_model(GTK_COMBO_BOX(combo), GTK_TREE_MODEL(store));
+    GtkCellRenderer *renderer = gtk_cell_renderer_text_new();
+    gtk_cell_layout_pack_start(GTK_CELL_LAYOUT(combo), renderer, TRUE);
+    g_object_unref(store);
 }
-

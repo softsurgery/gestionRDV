@@ -201,7 +201,7 @@ int listRDV(char nomFichier[],char ETS[],int jour,int mois,int annee){
           fclose(fp);
         }
       }
-      if (d.date.j == jour && d.date.m == mois && d.date.a == annee && strcmp(ETS,d.ets)) n++;
+      if (d.date.j == jour && d.date.m == mois && d.date.a == annee && strcmp(ETS,d.ets)==0) n++;
     }
     fclose(fp);
     return n;
@@ -213,6 +213,9 @@ float moyRDV_ETS(char nomFichier[],int jour,int mois,int annee){
   Donneur T[ARRAY_SIZE];
   int n = 0;
   populate(T,&n);
-  return n/nbets;
+  int nbrdv = 0;
+  for (int  i = 0 ;i < n ;i++)
+    if (T[i].date.j == jour && T[i].date.m == mois && T[i].date.a == annee) nbrdv++;
+  return (float)nbrdv/nbets;
 }
 
