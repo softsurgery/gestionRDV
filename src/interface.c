@@ -46,6 +46,7 @@ create_ajouter_donneur (void)
   GtkWidget *label4;
   GtkWidget *label1;
   GtkWidget *label2;
+  GtkWidget *ets;
   GtkWidget *label31;
   GtkWidget *annuler;
   GtkWidget *alignment1;
@@ -828,6 +829,9 @@ create_Donneur (void)
                     NULL);
   g_signal_connect ((gpointer) refresh, "clicked",
                     G_CALLBACK (on_refresh_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) stat, "clicked",
+                    G_CALLBACK (on_stat_clicked),
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */

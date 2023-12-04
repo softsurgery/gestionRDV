@@ -226,3 +226,11 @@ on_annuler4_clicked                    (GtkButton       *button,
 
 }
 
+
+void
+on_stat_clicked                        (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
