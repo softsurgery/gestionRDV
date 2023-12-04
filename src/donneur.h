@@ -12,6 +12,10 @@
 #define CIN_SIZE 10
 #endif
 
+#ifndef ETS_SIZE
+#define ETS_SIZE 10
+#endif
+
 #ifndef DATE_STRUCT
 #define DATE_STRUCT
 
@@ -29,14 +33,18 @@ typedef struct {
 typedef struct {
   char nom[NAME_SIZE];
   char cin[CIN_SIZE];
+  char sexe;
+  char ets[ETS_SIZE];
   Date date;
 } Donneur;
 
 #endif
 
-Donneur collect(char* nom,char* cin,int j,int m,int a);
+Donneur collect(char* nom,char* cin,int j,int m,int a,char sexe,char* ets);
 int export(Donneur d);
 void populate(Donneur T[],int* n);
 char* date_to_string(Date d);
 int delete_donneur(char* cin);
 int searchDonneurByCIN(const char *cin, Donneur *foundDonneur);
+int loadETS(char* ETS[],int* n);
+int nbETS(char nomFichier[])
