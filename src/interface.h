@@ -6,3 +6,4 @@ GtkWidget* create_ajouter_donneur (void);
 GtkWidget* create_modifier_donneur_ (void);
 GtkWidget* create_supprimer_donneur (void);
 GtkWidget* create_Donneur (void);
+GtkWidget* create_stat (void);
